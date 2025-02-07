@@ -27,6 +27,10 @@ def zeroth_power_via_newtonschulz5(G, steps=5, eps=1e-7):
         A = X @ X.T
         B = A @ X
         X = a * X + b * B + c * A @ B
+        
+    for _ in range(2): # Just done to not have to worry about iteraction with variance, can probably be removed
+        X = 1.5 * X - 0.5 * (X @ X.T) @ X  
+        
     if G.size(0) > G.size(1):
         X = X.T
     return X.to(G.dtype)  
@@ -66,7 +70,6 @@ class SOAP_Muon(optim.Optimizer):
         projection_type: str="full",
         precondition_frequency: int=10,
         max_precond_dim: int=10000,
-        muon_power: float=0.5,
     ):
         defaults = {
             "lr": lr,
@@ -78,7 +81,6 @@ class SOAP_Muon(optim.Optimizer):
             "projection_type": projection_type,
             "precondition_frequency": precondition_frequency,
             "max_precond_dim": max_precond_dim,
-            "muon_power": muon_power,
         }
         super().__init__(params, defaults)
 
@@ -173,13 +175,7 @@ class SOAP_Muon(optim.Optimizer):
                 # update = zeroth_power_via_newtonschulz5(norm_grad, steps=group['zeropower_iters'])
                 if p.dim() == 2 and max(p.shape) < 10000:
                      
-                    if math.isclose(group['muon_power'], 0.0):
-                        norm_grad_U, norm_grad_S, norm_grad_Vt = torch.linalg.svd(norm_grad, full_matrices=False)
-                        norm_grad = norm_grad_U @ norm_grad_Vt
-                        norm_grad = torch.sqrt(torch.abs(norm_grad))*torch.sign(norm_grad)
-                    elif not math.isclose(group['muon_power'], 1.0):
-                        norm_grad_U, norm_grad_S, norm_grad_Vt = torch.linalg.svd(norm_grad, full_matrices=False)
-                        norm_grad = norm_grad_U @ torch.diag(norm_grad_S**group['muon_power']) @ norm_grad_Vt
+                    norm_grad = zeropower_via_newtonschulz5(norm_grad, steps=10, eps=1e-7)
                 
                 norm_grad /= torch.mean(norm_grad**2)**.5
                 
