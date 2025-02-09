@@ -1,4 +1,4 @@
-v1.py was used in OLMo experiments as the optimizer for all layers. We receommend starting with this version.
+v1.py was used in OLMo experiments as the optimizer for all layers.
 
 
 v2.py was used in modded-nanogpt experiments as the optimizer for non first/last layers. The code for experiments is in the soap-muon-nanogpt folder but it is specific to our cluster. Specifically the configs used in experiments are in soap-muon-nanogpt/configs/exp4_largebatch6_seed_2.yaml and soap-muon-nanogpt/configs/exp4_largebatch6_seed.yaml.
