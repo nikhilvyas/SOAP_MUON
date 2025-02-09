@@ -1,4 +1,4 @@
-v1.py was used in OLMo experiments as the optimizer for all layers.
+v1.py was used in OLMo experiments as the optimizer for all layers. We receommend starting with this version.
 
 
 v2.py was used in modded-nanogpt experiments as the optimizer for non first/last layers.
