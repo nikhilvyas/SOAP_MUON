@@ -1,0 +1,17 @@
+wandb_group_name: "soapmuon_fix"
+
+sweep:
+  - optimizer_name: ["soap_muon2_abl1", "soap_muon2_abl2"]
+    precondition_frequency: 1
+    learning_rate: 2.0e-2
+    lr_lm_head: 2.0e-3
+    lr_wte: .3
+    projection_type: ["std", "full"]
+    seed: [0, 1, 2, 3]
+  - optimizer_name: ["soap_muon2_abl3"]
+    precondition_frequency: 1
+    learning_rate: 2.0e-2
+    lr_lm_head: 2.0e-3
+    lr_wte: .3
+    projection_type: ["std", "full"]
+    seed: [0]

@@ -1,0 +1,12 @@
+wandb_group_name: "soapmuon_wdfix"
+
+sweep:
+  - optimizer_name: "soap_muon2_beta2"
+    precondition_frequency: 1
+    learning_rate: 2.0e-2
+    lr_lm_head: 2.0e-3
+    lr_wte: .3
+    projection_type: "std"
+    seed: [0, 1, 2, 3]
+    newton_schulz_steps: 5
+

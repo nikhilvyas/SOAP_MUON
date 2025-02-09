@@ -1,0 +1,34 @@
+wandb_group_name: "largebatch_lrtune"
+
+batch_size: 2048
+num_iterations: 1800
+warmdown_iters: 600
+
+sweep:
+  - optimizer_name: ["soap_muon10_graft"]
+    precondition_frequency: 1
+    learning_rate: [1.0e-3, 3.0e-3]
+    lr_lm_head: 3.0e-3
+    lr_wte: .3
+    projection_type: "std"
+    seed: 0
+    nestrov: true
+    newton_schulz_steps: 10
+  - optimizer_name: ["soap_muon10_graft2"]
+    precondition_frequency: 1
+    learning_rate: [2.0e-2, 6.0e-2]
+    lr_lm_head: 3.0e-3
+    lr_wte: .3
+    projection_type: "std"
+    seed: 0
+    nestrov: true
+    newton_schulz_steps: 10
+  - optimizer_name: ["soap_muon10_graft"]
+    precondition_frequency: 1
+    learning_rate: [5.0e-4]
+    lr_lm_head: 4.0e-4
+    lr_wte: .3
+    projection_type: "std"
+    seed: 0
+    nestrov: true
+    newton_schulz_steps: 10

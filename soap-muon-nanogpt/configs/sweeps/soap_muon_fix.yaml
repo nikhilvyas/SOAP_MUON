@@ -1,0 +1,36 @@
+wandb_group_name: "soapmuon_fix"
+
+sweep:
+  - optimizer_name: ["soap_muon2", "muon"]
+    precondition_frequency: 1
+    learning_rate: 2.0e-2
+    lr_lm_head: 2.0e-3
+    lr_wte: .3
+    projection_type: "identity"
+    seed: [0, 1, 2, 3]
+    newton_schulz_steps: 8
+  - optimizer_name: ["soap_muon2"]
+    precondition_frequency: 1
+    learning_rate: 2.0e-2
+    lr_lm_head: 2.0e-3
+    lr_wte: .3
+    projection_type: "std"
+    seed: [0, 1, 2, 3]
+    newton_schulz_steps: 8
+  - optimizer_name: ["soap_muon2"]
+    precondition_frequency: 1
+    learning_rate: 2.0e-2
+    lr_lm_head: 2.0e-3
+    lr_wte: .3
+    projection_type: "full"
+    seed: [0, 1, 2, 3]
+    newton_schulz_steps: 8
+  - optimizer_name: ["soap_muon4_2"]
+    precondition_frequency: 1
+    learning_rate: 2.0e-2
+    lr_lm_head: 2.0e-3
+    lr_wte: .3
+    projection_type: "identity"
+    seed: [0, 1, 2, 3]
+    newton_schulz_steps: 8
+

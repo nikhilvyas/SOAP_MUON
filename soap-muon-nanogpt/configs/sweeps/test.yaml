@@ -1,0 +1,44 @@
+wandb_group_name: "test_it"
+
+sweep:
+  - optimizer_name: "soap_it"
+    precondition_frequency: 1
+    learning_rate: 3.0e-3
+    lr_lm_head: 2.0e-3
+    lr_wte: .4
+    inner_loops: [5, 10, 20]
+    newton_schulz_steps: [3, 5, 10]
+    outer_loops: 1
+    clip: [true, false]
+  - optimizer_name: "soap"
+    precondition_frequency: 1
+    learning_rate: 3.0e-3
+    lr_lm_head: 2.0e-3
+    lr_wte: .4
+  - optimizer_name: "soap_it"
+    precondition_frequency: [1, 10]
+    learning_rate: 3.0e-3
+    lr_lm_head: 2.0e-3
+    lr_wte: .4
+    inner_loops: [5, 10]
+    newton_schulz_steps: 10
+    outer_loops: 1
+    clip: false
+  - optimizer_name: "soap_it"
+    precondition_frequency: 1
+    learning_rate: 3.0e-3
+    lr_lm_head: 2.0e-3
+    lr_wte: .4
+    inner_loops: 5
+    newton_schulz_steps: 5
+    outer_loops: 1
+    clip2: true
+  - optimizer_name: "soap_it"
+    precondition_frequency: 1
+    learning_rate: 3.0e-3
+    lr_lm_head: 2.0e-3
+    lr_wte: .4
+    inner_loops: 80
+    newton_schulz_steps: 5
+    outer_loops: 1
+    clip: true

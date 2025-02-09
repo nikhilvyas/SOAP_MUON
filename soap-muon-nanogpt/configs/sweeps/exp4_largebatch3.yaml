@@ -1,0 +1,14 @@
+wandb_group_name: "largebatch_lrtune"
+
+batch_size: 2048
+num_iterations: 1800
+warmdown_iters: 600
+
+sweep:
+  - optimizer_name: ["muon"]
+    learning_rate: [1.0e-2, 2.0e-2, 4.0e-2]
+    lr_lm_head: [1.0e-3, 2.0e-3, 4.0e-3]
+    lr_wte: [.15, .3, .6]
+    seed: 0
+    nestrov: true
+    newton_schulz_steps: 10

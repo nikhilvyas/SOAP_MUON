@@ -1,0 +1,15 @@
+wandb_group_name: "largebatch_seed"
+
+batch_size: 2048
+num_iterations: 1800
+warmdown_iters: 600
+
+sweep:
+  - optimizer_name: ["muon"]
+    precondition_frequency: 1
+    learning_rate: [1.5e-2]
+    lr_lm_head: [2.5e-3, 6.0e-3]
+    lr_wte: [.6]
+    seed: [1, 2, 3, 4, 5, 6]
+    nestrov: true
+    newton_schulz_steps: 10

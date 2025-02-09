@@ -1,0 +1,33 @@
+wandb_group_name: "test_soaphia2"
+
+sweep:
+  - optimizer_name: "soap"
+    precondition_frequency: 10
+    learning_rate: [3.0e-3, 6.0e-3]
+    lr_lm_head: [2.0e-3, 4.0e-3]
+    lr_wte: [.3, .6]
+    sophia_lambda: [.316, .1]
+  - optimizer_name: "soap"
+    precondition_frequency: 10
+    learning_rate: [3.0e-3, 6.0e-3]
+    lr_lm_head: [2.0e-3, 4.0e-3]
+    lr_wte: [.3, .6]
+    sophia_lambda: [.0316, .01]
+  - optimizer_name: "soap"
+    precondition_frequency: 10
+    learning_rate: [3.0e-3, 6.0e-3]
+    lr_lm_head: [2.0e-3, 4.0e-3]
+    lr_wte: [.3, .6]
+    sophia_lambda: [.001, .0001]
+  - optimizer_name: "soap"
+    precondition_frequency: 10
+    learning_rate: [3.0e-3, 6.0e-3]
+    lr_lm_head: [2.0e-3, 4.0e-3]
+    lr_wte: [.3, .6]
+    sophia_lambda: [.00001]
+  - optimizer_name: "soap"
+    precondition_frequency: 10
+    learning_rate: [3.0e-3, 6.0e-3]
+    lr_lm_head: [2.0e-3, 4.0e-3]
+    lr_wte: [.3, .6]
+    sophia_lambda: [.000001]

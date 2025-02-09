@@ -1,0 +1,45 @@
+wandb_group_name: "soap_p_layer"
+
+sweep:
+  - optimizer_name: ["soap_p_layer"]
+    precondition_frequency: 1
+    learning_rate: [2.0e-3, 3.0e-3, 4.5e-3] 
+    lr_lm_head: 2.0e-3
+    lr_wte: .4
+    adam_power: [-.14, 0.0, .14]
+    seed: 0
+  - optimizer_name: ["soap_p_layer"]
+    precondition_frequency: 1
+    learning_rate: 1.0e-3
+    lr_lm_head: 2.0e-3
+    lr_wte: .4
+    adam_power: [-.14, 0.0, .14]
+    seed: 0
+  - optimizer_name: ["soap_p_layer"]
+    precondition_frequency: 1
+    learning_rate: [1.0e-3, 2.0e-3]
+    lr_lm_head: 2.0e-3
+    lr_wte: .4
+    adam_power: [-.25, .25]
+    seed: 0
+  - optimizer_name: ["soap_p_layer"]
+    precondition_frequency: 1
+    learning_rate: [5.0e-4]
+    lr_lm_head: 2.0e-3
+    lr_wte: .4
+    adam_power: [-.25]
+    seed: 0
+  - optimizer_name: ["soap_p_layer"]
+    precondition_frequency: 1
+    learning_rate: [5.0e-4]
+    lr_lm_head: 2.0e-3
+    lr_wte: .4
+    adam_power: 0.0
+    seed: 0
+  - optimizer_name: ["soap_p_layer"]
+    precondition_frequency: 1
+    learning_rate: [2.5e-4]
+    lr_lm_head: 2.0e-3
+    lr_wte: .4
+    adam_power: [-.25, 0.0]
+    seed: 0

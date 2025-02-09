@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: distributed_soap
+Version: 0.1.0
+Summary: PyTorch implementation of Distributed Shampoo
+License: BSD 3-clause
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.8

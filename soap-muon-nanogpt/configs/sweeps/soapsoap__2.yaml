@@ -1,0 +1,11 @@
+wandb_group_name: "soapsoap_wdfix"
+
+sweep:
+  - optimizer_name: "soapsoap"
+    precondition_frequency: 1
+    learning_rate: 3.0e-3
+    lr_lm_head: 1.5e-3
+    lr_wte: .25
+    projection_type: "std"
+    seed: [0, 1, 2, 3]
+

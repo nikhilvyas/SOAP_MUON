@@ -1,0 +1,19 @@
+wandb_group_name: "test_thr2" # Now for all layers not just MLPs
+
+sweep:
+  - optimizer_name: "soap"
+    precondition_frequency: 1
+    learning_rate: 3.0e-3
+    lr_lm_head: 2.0e-3
+    lr_wte: .3
+    clip_threshold: [.66]
+    seed: [0, 1, 2, 4]
+    clip_lr_mult: [1.0, 1.414]
+  - optimizer_name: "soap"
+    precondition_frequency: 1
+    learning_rate: 3.0e-3
+    lr_lm_head: 2.0e-3
+    lr_wte: .3
+    clip_threshold: [.66]
+    seed: [0, 1, 2, 4]
+    clip_lr_mult: 2.0

@@ -1,0 +1,41 @@
+wandb_group_name: "largebatch"
+
+sweep:
+  - optimizer_name: "soap"
+    precondition_frequency: 1
+    learning_rate: 3.0e-3
+    lr_lm_head: 4.0e-3
+    lr_wte: .3
+    seed: [0, 1, 2, 3]
+    batch_size: 2048
+    num_iterations: 2000
+    warmdown_iters: 650
+  - optimizer_name: "muon"
+    learning_rate: 2.0e-2
+    lr_lm_head: 4.0e-3
+    lr_wte: .3
+    seed: [0, 1, 2, 3]
+    batch_size: 2048
+    num_iterations: 2000
+    warmdown_iters: 650
+  - optimizer_name: "soapsoap"
+    precondition_frequency: 1
+    learning_rate: 3.0e-3
+    lr_lm_head: 4.0e-3
+    lr_wte: .3
+    seed: [0, 1, 2, 3]
+    batch_size: 2048
+    num_iterations: 2000
+    warmdown_iters: 650
+    projection_type: "std"
+  - optimizer_name: "soap_muon2"
+    precondition_frequency: 1
+    learning_rate: 2.0e-2
+    lr_lm_head: 4.0e-3
+    lr_wte: .3
+    seed: [0, 1, 2, 3]
+    batch_size: 2048
+    num_iterations: 2000
+    warmdown_iters: 650
+    projection_type: "std"
+

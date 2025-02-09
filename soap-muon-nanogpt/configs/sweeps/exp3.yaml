@@ -1,0 +1,75 @@
+wandb_group_name: "soapmuon_exp3"
+
+sweep:
+  - optimizer_name: ["soap_muon2_exp"]
+    precondition_frequency: 1
+    learning_rate: 2.0e-2
+    lr_lm_head: 2.0e-3
+    lr_wte: .3
+    projection_type: ["std", "full"]
+    seed: [0, 1, 2, 3]
+    nestrov: true
+  - optimizer_name: ["muon"]
+    precondition_frequency: 1
+    learning_rate: 2.0e-2
+    lr_lm_head: 2.0e-3
+    lr_wte: .3
+    seed: [0, 1, 2, 3]
+  - optimizer_name: ["soap_muon10"]
+    precondition_frequency: 1
+    learning_rate: 2.0e-2
+    lr_lm_head: 2.0e-3
+    lr_wte: .3
+    projection_type: ["std", "full"]
+    seed: [0, 1, 2, 3]
+    nestrov: true
+  - optimizer_name: ["soap_muon15"]
+    precondition_frequency: 1
+    learning_rate: 2.0e-2
+    lr_lm_head: 2.0e-3
+    lr_wte: .3
+    projection_type: ["std", "full"]
+    seed: [0, 1]
+    nestrov: true
+  - optimizer_name: ["soap_muon16_2"]
+    precondition_frequency: 1
+    learning_rate: 2.0e-2
+    lr_lm_head: 2.0e-3
+    lr_wte: .3
+    projection_type: ["std", "full"]
+    seed: [0, 1]
+    nestrov: true
+  - optimizer_name: ["muon16"]
+    precondition_frequency: 1
+    learning_rate: 2.0e-2
+    lr_lm_head: 2.0e-3
+    lr_wte: .3
+    projection_type: "full"
+    seed: [0, 1]
+    nestrov: true
+  - optimizer_name: ["muon"]
+    precondition_frequency: 1
+    learning_rate: 2.0e-2
+    lr_lm_head: 2.0e-3
+    lr_wte: .3
+    projection_type: "full"
+    seed: [0, 1]
+    nestrov: true
+    newton_schulz_steps: 10
+  - optimizer_name: ["soap_muon16", "soap_muon17"]
+    precondition_frequency: 40
+    learning_rate: 2.0e-2
+    lr_lm_head: 2.0e-3
+    lr_wte: .3
+    projection_type: ["std"]
+    seed: [0, 1]
+    nestrov: true
+    newton_schulz_steps: 5
+  - optimizer_name: ["muon"]
+    learning_rate: 2.0e-2
+    lr_lm_head: 2.0e-3
+    lr_wte: .3
+    projection_type: ["std"]
+    seed: [0, 1]
+    nestrov: true
+    newton_schulz_steps: 5

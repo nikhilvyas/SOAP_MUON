@@ -1,0 +1,19 @@
+wandb_group_name: "soapmuon_exp4"
+
+sweep:
+  - optimizer_name: ["soap_muon17"]
+    precondition_frequency: 40
+    learning_rate: 2.0e-2
+    lr_lm_head: 2.0e-3
+    lr_wte: .3
+    projection_type: ["std"]
+    seed: [4,5,6,7]
+    nestrov: true
+    newton_schulz_steps: 10
+  - optimizer_name: ["muon"]
+    learning_rate: 2.0e-2
+    lr_lm_head: 2.0e-3
+    lr_wte: .3
+    seed: [4,5,6,7]
+    nestrov: true
+    newton_schulz_steps: 10

@@ -1,0 +1,6 @@
+numpy
+tqdm
+torch
+huggingface-hub
+wandb
+omegaconf

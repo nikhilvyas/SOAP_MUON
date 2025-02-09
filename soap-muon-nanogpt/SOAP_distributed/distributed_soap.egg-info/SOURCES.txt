@@ -1,0 +1,9 @@
+setup.py
+distributed_soap/__init__.py
+distributed_soap/asdf.py
+distributed_soap/distributed_soap.py
+distributed_soap/shampoo_types.py
+distributed_soap.egg-info/PKG-INFO
+distributed_soap.egg-info/SOURCES.txt
+distributed_soap.egg-info/dependency_links.txt
+distributed_soap.egg-info/top_level.txt

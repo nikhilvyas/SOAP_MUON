@@ -1,0 +1,19 @@
+wandb_group_name: "muon_exp5"
+
+sweep:
+  - optimizer_name: ["muon"]
+    learning_rate: [1.0e-2, 2.0e-2, 4.0e-2]
+    lr_lm_head: [1.0e-3, 2.0e-3, 4.0e-3]
+    lr_wte: [.15, .3, .6]
+    seed: 0
+    nestrov: true
+    newton_schulz_steps: 10
+    init_scale: 1.0
+  - optimizer_name: ["muon"]
+    learning_rate: 2.0e-2
+    lr_lm_head: [4.0e-3, 8.0e-3]
+    lr_wte: [.6, 1.2]
+    seed: 0
+    nestrov: true
+    newton_schulz_steps: 10
+    init_scale: 1.0
